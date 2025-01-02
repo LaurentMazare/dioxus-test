@@ -12,7 +12,10 @@ export LD=$TOOLCHAIN/bin/ld
 export RANLIB=$TOOLCHAIN/bin/llvm-ranlib
 export STRIP=$TOOLCHAIN/bin/llvm-strip
 
-export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
-export PATH=$PATH:$TOOLCHAIN/bin
+export PATH=$ANDROID_HOME/cmdline-tools/latest/bin:$PATH
+export PATH=$TOOLCHAIN/bin:$PATH
 
+echo $TOOLCHAIN
+echo $PATH
+which clang++
 dx build --platform android --release
